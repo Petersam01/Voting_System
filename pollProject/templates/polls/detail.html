@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-<a class="btn btn-secondary btn-sm mb-3" href="{% url 'pollApp:index' %}">Back to Polls</a>
+<a class="btn btn-secondary btn-sm mb-3" href="{% url 'polls:index' %}">Back to Polls</a>
 <h1 class="text-center mb-3"> {{ question.question_text }}</h1>  
 
 {% if error_message %}
@@ -9,7 +9,7 @@
     </p>
 {% endif %}
 
-<form action="{% url 'polld:vote' question.id %}" method="post">
+<form action="{% url 'polls:vote' question.id %}" method="post">
   {% csrf_token %}
   {% for choice in question.choice_set.all %}
     <div class="form-check">
