@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="class text-center">
+    <div class="card-body">
+        <h1>Welcome to the Voting System</h1>
+         <p>This is the landing page. Please navigate using the menu above.</p>
+         <a class="btn btn-dark" href="{% url 'polls:index' %}">view available polls</a>
+    </div>
+</div>
+{% endblock %}
